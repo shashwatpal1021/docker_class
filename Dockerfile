@@ -1,12 +1,19 @@
 FROM node:20-alpine
+
 WORKDIR /app
 
+ENV DATABASE_URL=postgresql://postgres:mysecretpassword@localhost:5432/postgres
+
 COPY package*.json ./
+
 RUN npm install
 
-COPY . .
-# RUN npm install
-EXPOSE 3000
-CMD ["npm", "start"]
+COPY prisma ./prisma
 
-# CMD ["NODEMON", "APP.JS"]
+RUN npx prisma generate
+
+COPY . .
+
+EXPOSE 3000
+
+CMD ["npm", "start"]
