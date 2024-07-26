@@ -2,7 +2,7 @@ FROM node:20-alpine
 
 WORKDIR /app
 
-ENV DATABASE_URL=postgresql://postgres:mysecretpassword@localhost:5432/postgres
+# ENV DATABASE_URL=postgresql://postgres:102199@localhost:5432/postgresDB
 
 COPY package*.json ./
 
