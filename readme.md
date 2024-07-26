@@ -32,5 +32,5 @@
 
 - Start the Application Container
   ```sh
-  docker run -d --network my_network --name app -e DATABASE_URL="postgresql://user:password@postgresdb:5432/dbname" app
+  docker run -p 3000:3000 -d --network my_network --name app app
   ```
