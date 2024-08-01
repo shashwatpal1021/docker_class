@@ -30,6 +30,7 @@
   docker build -t app .
   ```
 
+  
 - Start the Application Container
   ```sh
   docker run -p 3000:3000 -d --network my_network --name app app
